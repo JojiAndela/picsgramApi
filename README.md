@@ -1,1 +1,3 @@
+[![Build Status](https://www.travis-ci.org/JojiAndela/picsgramApi.svg?branch=develop)](https://www.travis-ci.org/JojiAndela/picsgramApi) [![Maintainability](https://api.codeclimate.com/v1/badges/04dc267ced472cf24cce/maintainability)](https://codeclimate.com/github/JojiAndela/picsgramApi/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/04dc267ced472cf24cce/test_coverage)](https://codeclimate.com/github/JojiAndela/picsgramApi/test_coverage)
+
 # picsgramApi
