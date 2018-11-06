@@ -9,10 +9,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.get('/', (req, res) => {
-  res.send({ message: 'Welcome to picsgram!' });
-});
+app.get('/', (req, res) => res.send({ message: 'Welcome to picsgram!' }));
 
-app.listen(port, () => {
-  console.log('App listening on port 3000!');
-});
+app.listen(port, () => console.log('App listening on port 3000!'));
+
+export default app;
