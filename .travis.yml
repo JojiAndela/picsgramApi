@@ -2,6 +2,8 @@ language: node_js
 node_js:
   - stable
 before_script:
+  - psql -c 'create database picsgram_test;' -U postgres
+  - psql -c "CREATE USER jojitoon WITH PASSWORD 'jojitoon';" -U postgres
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build

@@ -1,9 +1,10 @@
 module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('Users', {
     id: {
-      allowNull: false,
-      primaryKey: true,
       type: Sequelize.UUID,
+      allowNull: false,
+      autoIncrement: false,
+      primaryKey: true,
       defaultValue: Sequelize.UUIDV4,
     },
     username: {
@@ -15,13 +16,16 @@ module.exports = {
     lastname: {
       type: Sequelize.STRING,
     },
+    isVerified: {
+      type: Sequelize.BOOLEAN,
+    },
     phone: {
       type: Sequelize.STRING,
     },
     dob: {
       type: Sequelize.DATE,
     },
-    is_male: {
+    isMale: {
       type: Sequelize.BOOLEAN,
     },
     bio: {
@@ -45,5 +49,5 @@ module.exports = {
       type: Sequelize.DATE,
     },
   }),
-  down: queryInterface => queryInterface.dropTable('users'),
+  down: queryInterface => queryInterface.dropTable('Users'),
 };
