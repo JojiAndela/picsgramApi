@@ -5,10 +5,20 @@ const PicsModel = (sequelize, DataTypes) => {
     caption: DataTypes.TEXT,
     image: DataTypes.STRING,
     userId: DataTypes.INTEGER,
+    id: {
+      allowNull: false,
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+    },
   });
-  // Pics.associate = function (models) {
-  //   // associations can be defined here
-  // };
+  Pics.associate = (models) => {
+    Pics.belongsTo(models.Users, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE',
+      as: 'owner',
+    });
+  };
   return Pics;
 };
 

@@ -18,9 +18,12 @@ const Users = (sequelize, DataTypes) => {
     },
     dob: {
       type: DataTypes.DATE,
-      allowNull: true,
     },
-    is_male: {
+    isVerified: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+    isMale: {
       type: DataTypes.BOOLEAN,
     },
     bio: {
@@ -28,7 +31,6 @@ const Users = (sequelize, DataTypes) => {
     },
     last_sign_in_at: {
       type: DataTypes.DATE,
-      allowNull: true,
     },
     email: {
       type: DataTypes.STRING,
@@ -38,15 +40,26 @@ const Users = (sequelize, DataTypes) => {
     password: {
       type: DataTypes.STRING,
     },
+    id: {
+      allowNull: false,
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+    },
   });
-  // users.associate = function (models) {
-  //   // associations can be defined here
-  // };
+  users.associate = (models) => {
+    users.hasMany(models.Pics, {
+      as: 'pics',
+      foreignKey: 'userId',
+    });
+  };
 
   users.beforeValidate((user) => {
     // eslint-disable-next-line no-param-reassign
     user.password = bcrypt.hashSync(user.password, 8);
   });
+
+  users.checkPassword = (password, userPassword) => bcrypt.compareSync(password, userPassword);
   return users;
 };
 

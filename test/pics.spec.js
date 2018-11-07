@@ -6,12 +6,12 @@ const { expect } = chai;
 chai.use(chaihttp);
 const request = chai.request(app);
 
-describe('initial test', () => {
-  it('trivial test', (done) => {
+describe('Pics test', () => {
+  it('All pics', (done) => {
     request
-      .get('/')
+      .get('/pics')
       .end((err, res) => {
-        expect(res.body.message).to.equal('Welcome to picsgram!');
+        expect(res.body.message).to.equal('Pics');
         done(err);
       });
   });
