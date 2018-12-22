@@ -3,14 +3,16 @@
     "username": "jojitoon",
     "password": "jojitoon",
     "database": "picsgram_dev",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging": false
   },
   "test": {
     "username": "jojitoon",
     "password": "jojitoon",
     "database": "picsgram_test",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging": false
   },
   "production": {
     "use_env_variable": "PRODUCTION_DATABASE_URL",

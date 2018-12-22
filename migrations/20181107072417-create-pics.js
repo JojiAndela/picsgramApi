@@ -13,6 +13,9 @@ module.exports = {
     image: {
       type: Sequelize.STRING,
     },
+    user: {
+      type: Sequelize.STRING,
+    },
     userId: {
       type: Sequelize.UUID,
       onDelete: 'CASCADE',

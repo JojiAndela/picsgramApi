@@ -1,7 +1,7 @@
-import validate from '../helpers/validator';
+import { middleware } from 'valid_me_js';
 
 const signUpValidator = (req, res, next) => {
-  const valid = validate(req, res, next);
+  const valid = middleware(req, res, next);
   valid
     .hasElement('email')
     .hasElement('username')
@@ -15,7 +15,7 @@ const signUpValidator = (req, res, next) => {
 };
 
 const signInValidator = (req, res, next) => {
-  const valid = validate(req, res, next);
+  const valid = middleware(req, res, next);
   valid
     .hasElement('email')
     .hasElement('password')

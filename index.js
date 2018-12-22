@@ -4,7 +4,7 @@ import userRoute from './routes/users';
 import picsRoute from './routes/pics';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 
 app.use(bodyParser.json());
@@ -15,6 +15,6 @@ app.use('/pics', picsRoute);
 
 app.get('/', (req, res) => res.send({ message: 'Welcome to picsgram!' }));
 
-app.listen(port, () => console.log('App listening on port 3000!'));
+app.listen(port, () => console.log('App listening on port 4000!'));
 
 export default app;
