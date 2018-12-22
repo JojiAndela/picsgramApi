@@ -4,7 +4,8 @@ const PicsModel = (sequelize, DataTypes) => {
   const Pics = sequelize.define('Pics', {
     caption: DataTypes.TEXT,
     image: DataTypes.STRING,
-    userId: DataTypes.INTEGER,
+    userId: DataTypes.UUID,
+    user: DataTypes.STRING,
     id: {
       allowNull: false,
       primaryKey: true,
